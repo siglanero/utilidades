@@ -1,18 +1,9 @@
 <?php 
 
 $path = 'SEU_DIRETORIO';
+
 $files = array_slice(scandir($path), 2);
-$getEmpresa = [];
-
-foreach ($files as $value) {
-
-	$info = $path;
-	if(realpath($info)){
-
-		$getEmpresa[] = getDirContents($info);
-	}
-}
-
+$getFiles = [];
 
 function getDirContents($dir, &$results = array()){
 	$files = scandir($dir);
@@ -30,8 +21,16 @@ function getDirContents($dir, &$results = array()){
 	return $results;
 }
 
+foreach ($files as $value) {
+
+	$info = $path;
+	if(realpath($info)){
+		$getFiles[] = getDirContents($info);
+	}
+}
+
 
 echo '<pre>';
-print_r($getEmpresa);
+print_r($getFiles);
 echo '</pre>';
 ?>
