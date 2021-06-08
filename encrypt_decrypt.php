@@ -1,3 +1,5 @@
+<?php
+
  *----------------------------------------------
  * @method 	Encrypt
  * @param 	$input 	Informe o texto que será criptografado.
